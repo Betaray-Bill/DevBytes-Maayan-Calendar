@@ -2,6 +2,7 @@
     position: fixed;
     height: 100vh;
     width: 10vw;
+    top: 0;
     background-color: #050c16;
     display: flex;
     flex-direction: column;

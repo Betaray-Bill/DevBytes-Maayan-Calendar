@@ -1,0 +1,55 @@
+.calendar_section {
+    width: 90vw;
+    margin-left: 10vw;
+    top: 0;
+    margin-top: 0;
+    height: 200vh;
+}
+
+.add_section {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+    /* z-index: 10; */
+}
+
+.add_bt {
+    display: flex;
+    align-items: center;
+    padding: 17px 36px;
+    border-radius: 8px;
+    background-color: #1a73e8;
+    color: white;
+    cursor: pointer;
+}
+
+.add_bt button {
+    border: none !important;
+    outline: none;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.rotate {
+    transform: rotate(45deg);
+}
+
+.add_bt:hover {
+    transition: 250ms all ease-in-out;
+    background-color: #1869d3;
+}
+
+.icon {
+    font-weight: 800;
+}
+
+.white {
+    color: white;
+}
+
+.add {
+    font-size: 22px;
+    font-weight: bold
+}

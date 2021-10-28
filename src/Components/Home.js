@@ -9,7 +9,7 @@ function Home() {
             <Sidebar />
             <div className="main">
                 <Header />
-                {/* <CalendarSection /> */}
+                <CalendarSection />
             </div>
         </div>
     )
