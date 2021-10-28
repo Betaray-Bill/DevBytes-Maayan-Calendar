@@ -1,0 +1,5 @@
+.HomeScreen {
+    height: max-content;
+    scroll-snap-align: start;
+    position: relative;
+}

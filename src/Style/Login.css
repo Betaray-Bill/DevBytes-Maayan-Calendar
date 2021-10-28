@@ -1,0 +1,66 @@
+.login {
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    margin-top: 5vw;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo img {
+    width: 200px;
+    object-fit: contain;
+}
+
+.web_name h2 {
+    font-size: 6vw
+}
+
+.para {
+    font-size: 18px;
+    text-align: center;
+}
+
+.signIn_section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button img {
+    width: 20px;
+    padding-right: 14px;
+}
+
+.btn-signIn {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 7px 17px;
+    border: none;
+    background-color: #f9f9f9;
+    color: #050c16;
+    border-radius: 3px;
+    cursor: pointer;
+    border: 2px solid #050c16;
+}
+
+.btn-signIn:hover {
+    color: #f9f9f9;
+    background-color: #050c16;
+    transition: 250ms all ease-in-out;
+}

@@ -1,0 +1,72 @@
+.login_nav {
+    width: 100vw;
+    top: 0;
+    margin-top: 0;
+    position: absolute;
+    height: 60px;
+    box-shadow: 0 19px 38px rgb(0 0 0 / 10%);
+    align-items: center;
+    z-index: 10;
+}
+
+.loginNav_section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px 0 25px;
+}
+
+.logo_section {
+    display: flex;
+    align-items: center;
+}
+
+.logoNav_img>img {
+    width: 3rem;
+    height: 3rem;
+    overflow: hidden;
+    object-fit: cover
+}
+
+.logo_name p {
+    font-size: 18px;
+    font-weight: semi-bold;
+    color: rgba(0, 0, 0, 0.842)
+}
+
+.loginNav_right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.about {
+    padding: 0px 20px;
+}
+
+.about a,
+.admin_btn a {
+    text-decoration: 18px;
+    color: #050c16;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.admin_btn a {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 7px 17px;
+    border: none;
+    background-color: #050c16;
+    border-radius: 3px;
+    color: #f9f9f9;
+    cursor: pointer;
+    border: 2px solid #050c16;
+}
+
+.admin_btn a:hover {
+    background-color: #f9f9f9;
+    color: #050c16;
+    transition: 250ms all ease-in-out;
+}

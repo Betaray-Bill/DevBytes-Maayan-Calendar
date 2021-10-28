@@ -1,0 +1,46 @@
+.sidebar {
+    position: fixed;
+    height: 100vh;
+    width: 10vw;
+    background-color: #050c16;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.logo img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+.time {
+    font-size: 18px;
+    color: #f9f9f9;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon {
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+    transition: 250ms all ease-in-out;
+}
+
+.time p {
+    padding-left: 10px;
+}

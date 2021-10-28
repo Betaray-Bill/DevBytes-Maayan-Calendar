@@ -1,0 +1,94 @@
+.header {
+    width: 90vw;
+    margin-left: 10vw;
+    top: 0;
+    margin-top: 0;
+    position: absolute;
+    height: 80px;
+    box-shadow: 0 19px 38px rgb(0 0 0 / 10%);
+    align-items: center;
+    /* background-color: pink; */
+    z-index: 10;
+}
+
+.header_section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px 0 25px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo_img>img {
+    width: 2.8rem;
+    height: 2.8rem;
+    overflow: hidden;
+    object-fit: cover
+}
+
+.logo_name p {
+    font-size: 18px;
+    font-weight: semi-bold;
+    color: rgba(0, 0, 0, 0.842)
+}
+
+.acc_section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.acc_welcome p {
+    font-weight: 600;
+    font-size: 18px;
+    padding-left: 20px;
+}
+
+.acc_img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+}
+
+.acc_img img {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+.sign_out p {
+    padding: 9px 22px;
+    border: 2px solid #050c16;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #f7f7f7;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #050c16;
+}
+
+.sign_out p:hover {
+    transition: 250ms all ease-in-out;
+    color: #050c16;
+    background-color: #f7f7f7;
+}
+
+.nav_right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* width: 10vw; */
+}
+
+.pad-right {
+    padding-right: 20px;
+}
