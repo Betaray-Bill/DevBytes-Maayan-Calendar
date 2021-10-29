@@ -11,7 +11,7 @@ function LoginNav() {
                         <img src={logo} alt="" />
                     </div>
                     <div className="logo_name">
-                        <p>Code Club Calendar</p>
+                        <p>Maayan Calendar</p>
                     </div>
                 </div>
                 <div className="loginNav_right">

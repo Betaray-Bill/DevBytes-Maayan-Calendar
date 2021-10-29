@@ -17,7 +17,7 @@
 .add_bt {
     display: flex;
     align-items: center;
-    padding: 17px 36px;
+    padding: 7px 17px;
     border-radius: 8px;
     background-color: #1a73e8;
     color: white;
@@ -50,6 +50,7 @@
 }
 
 .add {
-    font-size: 22px;
-    font-weight: bold
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 120;
 }
