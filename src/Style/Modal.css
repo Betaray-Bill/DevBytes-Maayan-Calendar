@@ -3,13 +3,20 @@
     position: absolute;
     width: 100vw;
     height: 100vh;
-    z-index: 100;
+    z-index: 10;
     overflow-y: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 250ms ease-in-ou t;
+    transition: all 250ms ease-in;
     overflow-x: hidden;
+}
+
+.modal_box {
+    margin-top: -100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .rotate {
@@ -57,9 +64,40 @@
     }
 }
 
+.event_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.event_name,
+.event_links {
+    padding-top: 12px;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    justify-content: space-between;
+    border-bottom: 2px solid white;
+}
+
+input[type="text"] {
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    color: black;
+}
+
+label {
+    font-weight: 600;
+    padding-left: 6px
+}
+
 .modal_img_section {
     display: flex;
     margin: auto;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     /* background-color: pink; */
@@ -91,6 +129,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 40px;
 }
 
 .upload_section button {
@@ -107,4 +146,58 @@
     transition: all 250ms ease-in-out;
     background-color: white;
     color: black;
+}
+
+.date_time {
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+input[type="datetime-local"] {
+    background-color: white;
+    padding: 8px 18px;
+    outline: none;
+    border: none;
+    margin-top: 20px;
+    font-size: 18px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0px 20px 35px rgb(78, 78, 78);
+}
+
+::-webkit-calendar-picker-indicator {
+    background-color: white;
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="datetime-local"]:hover {
+    transition: all 250ms ease-in-out;
+    background-color: black;
+    color: white;
+}
+
+.selected_img_display {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.selected_img_display img {
+    object-fit: cover;
+    width: 300px;
+    height: 200px;
+    object-position: initial;
 }

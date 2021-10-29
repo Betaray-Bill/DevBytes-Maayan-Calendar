@@ -1,14 +1,14 @@
-import React,{useState,  Fragment, useRef}  from 'react'
+import React,{useState,  Fragment, useRef, useEffect}  from 'react'
 import { useRecoilState } from "recoil"
 import { modalstate } from "../atoms/modalAtom"
 import {Dialog, Transition } from  "@headlessui/react"
 import "../Style/Modal.css"
 import { CameraIcon } from "@heroicons/react/outline"
-import { IoAddOutline } from "react-icons/io5";
+import { IoAddOutline, IoExitOutline, IoOptionsOutline } from "react-icons/io5";
 import {db, storage} from "../firebase"
 import { addDoc, collection, doc, serverTimestamp, updateDoc } from "@firebase/firestore"
 import { ref, getDownloadURL, uploadString } from "@firebase/storage"
-import {DateTimePickerComponent} from "@syncfusion/ej2-react-calendars"
+
 
 function Modal() {
 
@@ -16,30 +16,68 @@ function Modal() {
     const [selectedfile, setselectedfile] = useState(null)
     const [loading, setloading] = useState(false)   
 
+    const [dateTime, setdateTime] = useState('')
+
     const filePicker = useRef(null)
-    const captionRef = useRef(null)
+    const eventName = useRef("")
+    const eventMeet = useRef("")
+    const eventForm = useRef("")
+    const dateTimeref = useRef("")
 
     const addImageToPost = (e) => {
+        const reader = new FileReader()
+        if(e.target.files[0]){
+            reader.readAsDataURL(e.target.files[0])
+        }
 
+        reader.onload = (readerEvent) => {
+            setselectedfile(readerEvent.target.result)
+        }   
     }
 
     const uploadPost = async() => {
+        if (loading) return;
 
+        setloading(true)
+        const docRef = await addDoc(collection(db, "events"), {
+            EventName:eventName.current.value,
+            MeetLink:eventMeet.current.value,
+            FormLink:eventForm.current.value,
+            DateTime:dateTimeref.current.value,
+            timestamps: serverTimestamp()
+        })
+
+        const imageRef = ref(storage,`posts/${docRef.id}/image`)
+        await uploadString(imageRef, selectedfile, "data_url").then(async snapshot => {
+            const downloadedUrl = await getDownloadURL(imageRef)
+            await  updateDoc(doc(db, "posts", docRef.id), {
+                image: downloadedUrl
+            })
+        })
+
+
+        setopen(false);
+        setselectedfile(null);
+        setloading(false);
     }   
 
+    useEffect(() => {
+        console.log(eventName.current.value)
+        console.log(eventMeet.current.value)
+        console.log(eventForm.current.value)
+    }, [eventName]);
 
+    console.log(eventName.current.value)
+    console.log(eventMeet.current.value)
+    console.log(eventForm.current.value)
     return (
-        <Transition.Root show={open} as={Fragment}>
+        <Transition.Root show={open} as={Fragment} className="Modal">
 
             <Dialog
                 as="div"
-                // className="fixed z-50 inset-0 overflow-y-hidden"
-                className="Modal"
                 onClose={setopen}    
             >
-                <div className="flex items-center justify-center min-h-[800px] 
-                    sm:min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
-                >
+                <div>
                     <Transition.Child
                         as="div"
                         enter="ease-out duration-300"
@@ -63,29 +101,75 @@ function Modal() {
                         leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                     >
                     <div className="modal_box">
-                        <div className="modal_img_section"
-                            onClick={() => filePicker.current.click()}
-                        >
-                            <CameraIcon 
-                                className="icon-camera"
-                                aria-hidden="true"
-                            />  
-                        </div>
-                        <Dialog.Title
-                            as="h2"
-                            className="upl_foto"
-                        >
-                            Upload a Photo
-                        </Dialog.Title>
+                        {
+                            selectedfile ? (
+                                <div className="selected_img_display">
+                                    <img src={selectedfile} alt=""  onClick={() => setselectedfile(null)} />
+                                </div>
+                            )   : (
 
-                        <div>
-                            <DateTimePickerComponent placeholder="Choose a day for your event..."></DateTimePickerComponent>
+                                <div className="modal_img_section" onClick={() => filePicker.current.click()}>
+                                    <CameraIcon 
+                                        className="icon-camera"
+                                        aria-hidden="true"
+                                    /> 
+                                    <Dialog.Title
+                                        as="h2"
+                                        className="upl_foto"
+                                    >
+                                        Upload a Photo
+                                    </Dialog.Title>
+                                    <div>
+                                        <input 
+                                            type="file" 
+                                            hidden
+                                            ref={filePicker}
+                                            onChange={addImageToPost}    
+                                        />
+                                    </div> 
+                                </div>
+                            )
+                        }
+                        
+
+                        <div className="event_section">
+                                <div className="event_name">
+                                    <label>Event Name : </label>
+                                    <input 
+                                        type="text" placeholder="Event name"
+                                        ref={eventName}
+                                    />
+                                </div>
+                                <div className="event_links">
+                                    <IoExitOutline className="icon"/>
+                                    <label>Google Meet : </label>
+                                    <input 
+                                        type="text" placeholder="Google Meet Link" 
+                                        ref={eventMeet}
+                                    />
+                                </div>
+                                <div className="event_links">
+                                    <IoOptionsOutline className="icon"/>
+                                    <label>Google Form : </label>
+                                    <input  
+                                        type="text" placeholder="Google Form Link"  
+                                        ref={eventForm}
+                                    />
+                                </div>
+                            </div>
+
+                        <div className="date_time">
+                            <input 
+                                type="datetime-local" name="" id="" className="date"
+                                ref={dateTimeref}
+                                onChange = { e => setdateTime(e.target.value) }
+                            />
                         </div>
 
                         <div className="upload_section">
                             <button
                                 type="button"
-                                disabled={selectedfile}
+                                disabled={!selectedfile}
                                 className="upload_btn"
                                 onClick={uploadPost}
                             >
