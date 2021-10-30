@@ -109,4 +109,23 @@
         height: 20rem;
         overflow: hidden
     }
+    .post_wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    .event_info {
+        display: flex;
+        flex-direction: column;
+    }
+    .event_head h2 {
+        font-size: 20px;
+    }
+    .icon {
+        font-size: 24px
+    }
+    .event_form a,
+    .event_gmeet a {
+        font-size: 5px 12px;
+        font-size: 14px;
+    }
 }

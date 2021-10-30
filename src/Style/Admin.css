@@ -1,5 +1,26 @@
 .admin {
-    height: 100vh;
+    height: max-content;
     width: 100vw;
-    background-color: thistle;
+    background-color: #498fdd;
+    text-align: center;
+}
+
+.admin_wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.admin_img img {
+    width: 50vw;
+}
+
+@media(max-width:768px) {
+    .admin_wrapper {
+        display: block;
+    }
+    .admin_img img {
+        width: 80vw;
+        height: 30vh
+    }
 }

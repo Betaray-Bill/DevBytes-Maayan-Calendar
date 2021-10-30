@@ -23,6 +23,7 @@ video {
     min-width: 100%;
     z-index: -1;
     min-height: 100%;
+    object-fit: cover
     /* z-index: -1;
     width: 100vw;
     height: 90vh;
@@ -86,4 +87,11 @@ button img {
     color: #f9f9f9;
     background-color: #050c16;
     transition: 250ms all ease-in-out;
+}
+
+@media(max-width:768px) {
+    .web_name h2 {
+        font-size: 10vw;
+        color: white
+    }
 }

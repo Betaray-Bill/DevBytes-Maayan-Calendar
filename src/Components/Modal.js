@@ -160,14 +160,18 @@ function Modal() {
                             </div>
 
                         <div className="date_time">
+                            <label>Date : </label>
                             <input 
                                 type="date" name="" id="" className="date"
                                 data-date-format="DD MMMM YYYY"
                                 ref={dateref}
                             />
+                           <div>
+                           <label>Time : </label>
                             <input type="time" 
                                 ref={time}
                             />
+                           </div>
                         </div>
 
                         <div className="upload_section">

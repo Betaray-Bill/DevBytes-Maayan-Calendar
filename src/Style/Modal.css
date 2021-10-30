@@ -5,7 +5,7 @@
     width: 100vw;
     height: 100vh;
     z-index: 10;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
     display: flex;
     justify-content: center;
     transition: all 250ms ease-in-out;
@@ -157,7 +157,8 @@ label {
 }
 
 input[type="date"],
-input[type="time"] {
+input[type="time"],
+input[type="password"] {
     background-color: white;
     padding: 8px 18px;
     margin: 20px 40px;
@@ -220,15 +221,28 @@ input[type="time"]:hover {
 
 @media(max-width:638px) {
     .Modal {
-        height: max-content;
+        height: 100vh;
         overflow-y: scroll;
     }
     .uploading_img img {
-        width: 70vw;
+        width: 60vw;
+        height: 15vh
     }
     .event_name,
     .event_links {
         padding: 6px;
         font-size: 14px;
+    }
+    .close-icon {
+        font-size: 24px
+    }
+    .date_time {
+        margin-top: 6px
+    }
+    input[type="date"],
+    input[type="time"] {
+        margin-top: 10px;
+        font-size: 14px;
+        margin: 10px 20px;
     }
 }

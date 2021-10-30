@@ -72,3 +72,29 @@
     color: #050c16;
     transition: 250ms all ease-in-out;
 }
+
+@media(max-width:768px) {
+    .loginNav_section {
+        padding: 0 10px 0 10px;
+    }
+    .logoNav_img>img {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+@media(max-width:640px) {
+    .about a,
+    .admin_btn a {
+        text-decoration: none;
+        color: white;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .logo_name {
+        font-size: 14px;
+    }
+    .admin_btn a {
+        padding: 5px 12px;
+    }
+}
