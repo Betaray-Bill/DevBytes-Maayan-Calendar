@@ -66,12 +66,12 @@
 }
 
 .sign_out p {
-    padding: 9px 22px;
+    padding: 7px 17px;
     border: 2px solid #050c16;
     border-radius: 8px;
     cursor: pointer;
     color: #f7f7f7;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     background-color: #050c16;
 }

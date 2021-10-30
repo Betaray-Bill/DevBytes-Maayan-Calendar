@@ -10,6 +10,7 @@
     align-items: center;
     transition: all 250ms ease-in;
     overflow-x: hidden;
+    border-radius: 12px;
 }
 
 .modal_box {
@@ -155,9 +156,11 @@ label {
     text-align: center;
 }
 
-input[type="datetime-local"] {
+input[type="date"],
+input[type="time"] {
     background-color: white;
     padding: 8px 18px;
+    margin: 20px 40px;
     outline: none;
     border: none;
     margin-top: 20px;
@@ -176,15 +179,16 @@ input[type="datetime-local"] {
     cursor: pointer;
 }
 
-input[type="datetime-local"]:hover {
+input[type="date"]:hover,
+input[type="time"]:hover {
     transition: all 250ms ease-in-out;
     background-color: black;
     color: white;
 }
 
 .selected_img_display {
-    width: 300px;
-    height: 200px;
+    /* width: 300px;
+    height: 200px; */
     object-fit: cover;
     overflow: hidden;
     border-radius: 8px;
@@ -197,6 +201,7 @@ input[type="datetime-local"]:hover {
 
 .selected_img_display img {
     object-fit: cover;
+    border-radius: 8px;
     width: 300px;
     height: 200px;
     object-position: initial;

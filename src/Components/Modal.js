@@ -16,13 +16,12 @@ function Modal() {
     const [selectedfile, setselectedfile] = useState(null)
     const [loading, setloading] = useState(false)   
 
-    const [dateTime, setdateTime] = useState('')
-
     const filePicker = useRef(null)
     const eventName = useRef("")
     const eventMeet = useRef("")
     const eventForm = useRef("")
-    const dateTimeref = useRef("")
+    const dateref = useRef("")
+    const time = useRef("")
 
     const addImageToPost = (e) => {
         const reader = new FileReader()
@@ -34,7 +33,8 @@ function Modal() {
             setselectedfile(readerEvent.target.result)
         }   
     }
-
+    const month_num = dateref.current.value;
+    console.log(month_num)
     const uploadPost = async() => {
         if (loading) return;
 
@@ -43,14 +43,16 @@ function Modal() {
             EventName:eventName.current.value,
             MeetLink:eventMeet.current.value,
             FormLink:eventForm.current.value,
-            DateTime:dateTimeref.current.value,
+            Date:dateref.current.value,
+            Time:time.current.value,
+            Month:month_num.substring(5, 7),
             timestamps: serverTimestamp()
         })
 
-        const imageRef = ref(storage,`posts/${docRef.id}/image`)
+        const imageRef = ref(storage,`events/${docRef.id}/image`)
         await uploadString(imageRef, selectedfile, "data_url").then(async snapshot => {
             const downloadedUrl = await getDownloadURL(imageRef)
-            await  updateDoc(doc(db, "posts", docRef.id), {
+            await  updateDoc(doc(db, "events", docRef.id), {
                 image: downloadedUrl
             })
         })
@@ -62,14 +64,10 @@ function Modal() {
     }   
 
     useEffect(() => {
-        console.log(eventName.current.value)
-        console.log(eventMeet.current.value)
-        console.log(eventForm.current.value)
-    }, [eventName]);
+        
+    }, []);
 
-    console.log(eventName.current.value)
-    console.log(eventMeet.current.value)
-    console.log(eventForm.current.value)
+
     return (
         <Transition.Root show={open} as={Fragment} className="Modal">
 
@@ -100,7 +98,7 @@ function Modal() {
                         leaveFrom="opacity-200  translate-y-0 sm:scale-100"
                         leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                     >
-                    <div className="modal_box">
+                    <div className="modal_box"> 
                         {
                             selectedfile ? (
                                 <div className="selected_img_display">
@@ -160,9 +158,12 @@ function Modal() {
 
                         <div className="date_time">
                             <input 
-                                type="datetime-local" name="" id="" className="date"
-                                ref={dateTimeref}
-                                onChange = { e => setdateTime(e.target.value) }
+                                type="date" name="" id="" className="date"
+                                data-date-format="DD MMMM YYYY"
+                                ref={dateref}
+                            />
+                            <input type="time" 
+                                ref={time}
                             />
                         </div>
 

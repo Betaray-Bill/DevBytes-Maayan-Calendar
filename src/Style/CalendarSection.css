@@ -6,6 +6,18 @@
     height: 200vh;
 }
 
+
+/* Events display */
+
+.Events_block {
+    width: 100%;
+    height: 100%;
+    background-color: pink
+}
+
+
+/* add Section */
+
 .add_section {
     position: fixed;
     bottom: 0;

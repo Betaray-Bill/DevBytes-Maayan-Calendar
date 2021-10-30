@@ -15,17 +15,15 @@ function CalendarSection() {
 
     return (
         <div className="calendar_section">
+
+            <div className="Events_block">
+                
+            </div>
         
 
             <div className="add_section">
                 <div className="add_bt" onClick={() => setopen(true)} >
                     <IoAddOutline className="icon white"/> 
-                    
-                    {/* {
-                        !open ? 
-                        <IoAddOutline className="icon white"/> : <IoClose className="icon " />
-                    }
-                    */}
                     <button 
                         className="add"  
                     >
