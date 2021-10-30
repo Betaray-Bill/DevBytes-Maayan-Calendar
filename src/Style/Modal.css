@@ -225,7 +225,7 @@ input[type="time"]:hover {
         overflow-y: scroll;
     }
     .uploading_img img {
-        width: 60vw;
+        width: 50vw;
         height: 15vh
     }
     .event_name,

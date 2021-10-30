@@ -3,7 +3,7 @@ import Post from "./Post"
 import "../Style/Month_event.css"
 
 
-function Month_event({ all_det }) {
+function Month_event({ all_det , id}) {
     let month = " "
 
     if(all_det.Month === "01"){
@@ -40,7 +40,7 @@ function Month_event({ all_det }) {
                 <h2>{month}-{all_det.Year}</h2>
             </div>
             <div className="event_posts">
-                <Post all_det={all_det} />
+                <Post all_det={all_det} id={id}/>
             </div>
         </div>
     )

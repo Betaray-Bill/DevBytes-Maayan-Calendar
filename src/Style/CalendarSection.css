@@ -1,14 +1,16 @@
 .calendar_section {
     width: 90vw;
+    min-height: 100vh;
     margin-left: 10vw;
     top: 0;
     margin-top: 80px;
     height: max-content;
     padding-bottom: 5vh;
-    background-image: url('https://i.pinimg.com/originals/e0/c4/74/e0c4745ee07489804c3ac7bafec89d45.jpg');
+    /* background-image: url('https://i.pinimg.com/originals/e0/c4/74/e0c4745ee07489804c3ac7bafec89d45.jpg'); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    transition: all 250ms ease-in-out;
     background-attachment: fixed;
 }
 

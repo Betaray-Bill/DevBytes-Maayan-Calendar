@@ -9,7 +9,7 @@ function Sidebar() {
   var today = new Date();
   var date = today.getDate() + ":" + today.getMonth() + ":" + today.getFullYear()
   var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-  console.log(date)
+
   return (
     <div className="sidebar">
       <div className="logo">

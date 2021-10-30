@@ -1,8 +1,15 @@
+import { deleteDoc, doc } from '@firebase/firestore';
 import React from 'react'
 import { IoPencil, IoTrashOutline } from "react-icons/io5";
+import { db } from '../firebase';
 import "../Style/Post.css"
 
-function Post({ all_det }) {
+function Post({ all_det , id}) {
+
+    const del_doc = async() => { 
+        const docRef = doc(db,"events", id);
+        await deleteDoc(docRef)
+    }
     
   return (
     <div className="post" >
@@ -34,7 +41,7 @@ function Post({ all_det }) {
                 <IoPencil className="icon update_icon"/>
             </div>
             <div className="delete">
-                <IoTrashOutline className="icon del_icon"/>
+                <IoTrashOutline className="icon del_icon" onClick={del_doc}/>
             </div>
         </div>
     </div>
