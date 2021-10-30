@@ -2,8 +2,9 @@ import React from 'react'
 import "../Style/Post.css"
 
 function Post({ all_det }) {
+    
   return (
-    <div className="post">
+    <div className="post" >
         <div className="post_wrapper">
             <div className="event_img">
                 <img src={all_det.image} alt="" />

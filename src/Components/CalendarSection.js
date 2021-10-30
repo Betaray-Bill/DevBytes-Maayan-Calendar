@@ -43,7 +43,7 @@ function CalendarSection() {
                             ))                    
                         ):(
                             <div className="no_data">
-                                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/6d391369321565.5b7d0d570e829.gif" alt="loading" />
+                                <img src="https://i.gifer.com/B0eS.gif" alt="loading" />
                                 <div className="no_data_text">
                                     <p>No Events are added</p>
                                 </div>

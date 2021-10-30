@@ -1,9 +1,10 @@
 .post {
     width: 18.75rem;
     height: 18.375rem;
-    border: 2px solid rgb(36, 36, 36);
+    border: 1px solid rgb(36, 36, 36);
     border-radius: 8px;
     padding: 10px;
+    cursor: pointer;
 }
 
 .post_wrapper {
@@ -16,9 +17,23 @@
     overflow: hidden;
 }
 
+.event_img {
+    overflow: hidden;
+    width: 100%;
+    height: max-content
+}
+
 .event_img img {
     object-fit: cover;
     width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.post:hover img {
+    transition: all 250ms ease-in-out;
+    transform: scale(1.05);
     border-radius: 8px;
 }
 
@@ -47,8 +62,15 @@
     color: black;
 }
 
+.event_gmeet a:hover {
+    transition: 250ms all ease-in-out;
+    background-color: rgb(53, 137, 216);
+    color: white;
+}
+
 .event_form a {
     padding: 7px 17px !important;
+    color: black;
 }
 
 .event_form a:hover {
