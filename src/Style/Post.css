@@ -1,0 +1,64 @@
+.post {
+    width: 18.75rem;
+    height: 18.375rem;
+    border: 2px solid rgb(36, 36, 36);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.post_wrapper {
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    overflow: hidden;
+}
+
+.event_img img {
+    object-fit: cover;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.event_info {
+    display: block;
+}
+
+.event_head h2 {
+    font-size: 18px;
+}
+
+.event_info_links,
+.dateAndTime {
+    display: flex;
+    justify-content: space-between;
+}
+
+.event_info_links a {
+    text-decoration: none;
+}
+
+.event_gmeet a {
+    padding: 7px 17px !important;
+    background-color: rgb(125, 185, 241);
+    border-radius: 4px;
+    color: black;
+}
+
+.event_form a {
+    padding: 7px 17px !important;
+}
+
+.event_form a:hover {
+    transition: 250ms all ease-in-out;
+    padding: 7px 17px !important;
+    background-color: rgb(125, 185, 241);
+    border-radius: 4px;
+    color: black;
+}
+
+.dateAndTime {
+    font-weight: 600;
+}

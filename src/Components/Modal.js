@@ -33,8 +33,9 @@ function Modal() {
             setselectedfile(readerEvent.target.result)
         }   
     }
-    const month_num = dateref.current.value;
-    console.log(month_num)
+    var month_num = dateref.current.value;
+    var year_num = dateref.current.value;
+
     const uploadPost = async() => {
         if (loading) return;
 
@@ -46,6 +47,7 @@ function Modal() {
             Date:dateref.current.value,
             Time:time.current.value,
             Month:month_num.substring(5, 7),
+            Year:year_num.substring(0,4),
             timestamps: serverTimestamp()
         })
 
