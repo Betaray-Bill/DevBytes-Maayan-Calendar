@@ -16,7 +16,7 @@ function CalendarSection() {
     const [loading, setloading] = useState(false)
 
     useEffect(() => {
-        const unsub = onSnapshot(query(collection(db,"events"), orderBy("Month")), snapshot => {
+        const unsub = onSnapshot(query(collection(db,"events"), orderBy("Month","asc")), snapshot => {
             setposts(snapshot.docs)
             setloading(true)
         })

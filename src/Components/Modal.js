@@ -99,6 +99,9 @@ function Modal() {
                         leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                     >
                     <div className="modal_box"> 
+                        <div className="uploading_img">
+                            <img src="https://cdn.dribbble.com/users/1585453/screenshots/6732255/comp_1.gif" alt="" />
+                        </div>
                         {
                             selectedfile ? (
                                 <div className="selected_img_display">
@@ -184,6 +187,7 @@ function Modal() {
                         </div>
                     </Transition.Child>
                 </div>
+
             </Dialog>
         </Transition.Root>
     )

@@ -7,6 +7,7 @@ import Home from './Components/Home';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout,login, selectUser } from './features/userSlice';
 
+
 function App() {
 
 
@@ -28,12 +29,13 @@ function App() {
   },[user])
 
   return (
-    <div>
-      {
-        user ? 
-        <Home /> : <HomeScreen  />
-      }
-    </div>
+      <div>
+        {
+          user ? 
+          <Home /> : <HomeScreen  />
+        }
+      </div>
+
   );
 }
 

@@ -3,8 +3,8 @@ import "../Style/Admin.css"
 
 function Admin() {
     return (
-        <div>
-            Admin
+        <div className="admin">
+            admin
         </div>
     )
 }

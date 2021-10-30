@@ -23,17 +23,19 @@
     object-fit: cover;
 }
 
-.time {
+.time_now,
+.date_now {
     font-size: 18px;
     color: #f9f9f9;
     padding-bottom: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
 }
 
 .icon {
-    font-size: 32px;
+    font-size: 28px;
     cursor: pointer;
 }
 
@@ -44,4 +46,46 @@
 
 .time p {
     padding-left: 10px;
+}
+
+.nav_pages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+}
+
+@media(max-width:1200px) {
+    .time_now,
+    .date_now {
+        font-size: 14px;
+        display: block;
+    }
+    .nav_pages a {
+        padding-top: 20px;
+    }
+    a p {
+        display: none;
+    }
+}
+
+@media(max-width:1200px) {
+    .time_now,
+    .date_now {
+        font-size: 14px;
+    }
+}
+
+@media(max-width:768px) {
+    .sidebar {
+        display: none;
+    }
 }

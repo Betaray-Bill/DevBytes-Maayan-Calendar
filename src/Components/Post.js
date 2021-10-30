@@ -1,4 +1,5 @@
 import React from 'react'
+import { IoPencil, IoTrashOutline } from "react-icons/io5";
 import "../Style/Post.css"
 
 function Post({ all_det }) {
@@ -10,6 +11,10 @@ function Post({ all_det }) {
                 <img src={all_det.image} alt="" />
             </div>
             <div className="event_info">
+            <div className="dateAndTime">
+                    <p>{all_det.Date}</p>
+                    <p>{all_det.Time}</p>
+                </div>
                 <div className="event_head">
                     <h2>{all_det.EventName}</h2>
                 </div>
@@ -21,10 +26,15 @@ function Post({ all_det }) {
                         <a href={all_det.FormLink}>Fill Form</a>
                     </div>
                 </div>
-                <div className="dateAndTime">
-                    <p>{all_det.Date}</p>
-                    <p>{all_det.Time}</p>
-                </div>
+
+            </div>
+        </div>
+        <div className="editing">
+            <div className="update">
+                <IoPencil className="icon update_icon"/>
+            </div>
+            <div className="delete">
+                <IoTrashOutline className="icon del_icon"/>
             </div>
         </div>
     </div>

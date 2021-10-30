@@ -1,5 +1,6 @@
 .Modal {
-    background-color: rgb(145, 191, 229);
+    background-color: #caeeff;
+    /* background-color: rgb(145, 191, 229); */
     position: absolute;
     width: 100vw;
     height: 100vh;
@@ -204,4 +205,30 @@ input[type="time"]:hover {
     width: 300px;
     height: 200px;
     object-position: initial;
+}
+
+.uploading_img {
+    display: flex;
+    justify-content: center;
+}
+
+.uploading_img img {
+    position: relative;
+    width: 20vw;
+    /* height: 20vh */
+}
+
+@media(max-width:638px) {
+    .Modal {
+        height: max-content;
+        overflow-y: scroll;
+    }
+    .uploading_img img {
+        width: 70vw;
+    }
+    .event_name,
+    .event_links {
+        padding: 6px;
+        font-size: 14px;
+    }
 }

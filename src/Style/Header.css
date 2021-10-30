@@ -92,3 +92,37 @@
 .pad-right {
     padding-right: 20px;
 }
+
+@media(max-width:768px) {
+    .header {
+        width: 100vw;
+        margin-left: 0vw;
+        height: 60px;
+    }
+    .header_section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px 0 10px;
+    }
+    .logo_img>img {
+        width: 2rem;
+        height: 2rem;
+    }
+    .acc_welcome p {
+        font-size: 16px;
+        padding-left: 10px;
+    }
+    .acc_img {
+        width: 2rem;
+        height: 2rem;
+    }
+    .acc_img img {
+        width: 2rem;
+        height: 2rem;
+    }
+    .sign_out p {
+        font-size: 14px;
+        padding: 5px 12px;
+    }
+}

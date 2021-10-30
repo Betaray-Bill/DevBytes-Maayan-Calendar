@@ -8,11 +8,32 @@
 
 .wrapper {
     margin-top: 5vw;
+    height: 90vh;
     text-align: center;
     display: grid;
     place-items: center;
     flex-direction: column;
     justify-content: center;
+}
+
+video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    z-index: -1;
+    min-height: 100%;
+    /* z-index: -1;
+    width: 100vw;
+    height: 90vh;
+    background-color: pink; */
+}
+
+source {
+    width: 100%;
+    top: 0;
+    position: absolute;
+    height: 90vh;
 }
 
 .logo img {
@@ -21,7 +42,8 @@
 }
 
 .web_name h2 {
-    font-size: 6vw
+    font-size: 6vw;
+    color: white
 }
 
 .para {
@@ -57,6 +79,7 @@ button img {
     border-radius: 3px;
     cursor: pointer;
     border: 2px solid #050c16;
+    font-family: 'Roboto', sans-serif;
 }
 
 .btn-signIn:hover {

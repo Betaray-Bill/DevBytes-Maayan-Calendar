@@ -13,6 +13,7 @@ function Header() {
 
     const SignOut= () => {
         signOut(auth).then(() => {
+            window.location.reload(false);
         })
     }
 

@@ -4,6 +4,7 @@
     margin-top: 0;
     position: absolute;
     height: 60px;
+    /* background-color: #fff; */
     box-shadow: 0 19px 38px rgb(0 0 0 / 10%);
     align-items: center;
     z-index: 10;
@@ -19,6 +20,7 @@
 .logo_section {
     display: flex;
     align-items: center;
+    justify-content: center
 }
 
 .logoNav_img>img {
@@ -28,10 +30,10 @@
     object-fit: cover
 }
 
-.logo_name p {
-    font-size: 18px;
-    font-weight: semi-bold;
-    color: rgba(0, 0, 0, 0.842)
+.logo_name {
+    /* font-size: 18px; */
+    font-weight: 600;
+    color: white;
 }
 
 .loginNav_right {
@@ -48,7 +50,7 @@
 .about a,
 .admin_btn a {
     text-decoration: 18px;
-    color: #050c16;
+    color: white;
     font-size: 18px;
     font-weight: 600;
 }
@@ -62,7 +64,7 @@
     border-radius: 3px;
     color: #f9f9f9;
     cursor: pointer;
-    border: 2px solid #050c16;
+    /* border: 2px solid #050c16; */
 }
 
 .admin_btn a:hover {
